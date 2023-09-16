@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="homework.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="data types.cpp">
+    <ClCompile Include="lesson 3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
