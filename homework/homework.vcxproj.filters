@@ -18,8 +18,5 @@
     <ClCompile Include="homework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data types.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
