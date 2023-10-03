@@ -302,3 +302,244 @@ int task_18()
 	std::cout << "Number 2 = " << number_2 << std::endl;
 	return 0;
 }
+
+int task_19()
+{
+	double temperature = 0;
+
+	std::cout << "Please enter the temperature" << std::endl;
+	std::cin >> temperature;
+
+	if (temperature >= 35.0 && temperature < 36.1)
+	{
+		std::cout << "You have a low temperature" << std::endl;
+	}
+
+	else if (temperature >= 36.1 && temperature < 37.0)
+	{
+		std::cout << "Your temperature is normal" << std::endl;
+	}
+
+	else if (temperature >= 37.0 && temperature < 40.1)
+	{
+		std::cout << "You have a fever" << std::endl;
+	}
+
+	else 
+	{
+		std::cout << "Please enter a valid value" << std::endl;
+	}
+	return 0;
+}
+
+int task_20()
+{
+	int hours = 0, minutes = 0, seconds = 0;
+
+	std::cout << "Please enter hours, minutes and seconds" << std::endl;
+	std::cin >> hours >> minutes >> seconds;
+
+	if (hours >= 25 || minutes >= 61 || seconds >= 60)
+		std::cout << "Please enter valid values" << std::endl;
+	else 
+		std::cout << "The values are valid" << std::endl;
+	return 0;
+}
+
+int task_21()
+{
+	int year = 0;
+
+	std::cout << "Please enter the year" << std::endl;
+	std::cin >> year;
+
+	if (year%4 == 0 && year%100 !=0 || year%400 == 0)
+		std::cout << "It is a leap year" << std::endl;
+	else
+		std::cout << "It is not a leap year" << std::endl;
+	return 0;
+}
+
+int task_22()
+{
+	int age = 0;
+	char gender;
+
+	std::cout << "Enter the age" << std::endl;
+	std::cin >> age;
+
+	std::cout << "Enter the gender (M/F)" << std::endl;
+	std::cin >> gender;
+
+	if (gender == 'M')
+	{
+		if (age >= 60)
+			std::cout << "Retirement age" << std::endl;
+		else
+			std::cout << "Not retirement age" << std::endl;
+	}
+
+	else if (gender == 'F')
+	{
+		if (age >= 55)
+			std::cout << "Retirement age" << std::endl;
+		else
+			std::cout << "Not retirement age" << std::endl;
+	}
+
+	else 
+		std::cout << "You entered the gender incorrectly" << std::endl;
+	return 0;
+}
+
+int task_23()
+{
+	int digit = 1;
+
+	while (digit <= 100)
+	{
+		std::cout << digit << " ";
+		digit++;
+	}
+	return 0;
+}
+
+int task_24()
+{
+	int digit;
+	int sum = 0, average = 0, i = 0;
+
+	std::cout << "Enter digits: " << std::endl;
+
+	while (i < 10)
+	{
+		std::cin >> digit;
+		sum += digit;
+		i++;
+	}
+
+	average = sum / 10;
+
+	std::cout << "Sum = " << sum << std::endl;
+	std::cout << "Average = " << average << std::endl;
+	return 0;
+}
+
+int task_25()
+{
+	int n;
+	int sum = 0, count = 0;
+
+	std::cout << "Enter the number of unpaired numbers" << std::endl;
+	std::cin >> n;
+
+	std::cout << "The first " << n << " odd numbers and their squares:" << std::endl;
+
+	do 
+	{
+		if (count % 2 != 0) 
+		{
+			std::cout << count << " ^ 2 = " << count * count << std::endl;
+			sum += count * count;
+		}
+		count++;
+	} while (count <= 2 * n);
+
+	std::cout << "Sum of squares of " << n << " odd numbers = " << sum << std::endl;
+	return 0;
+}
+
+int task_26()
+{
+	int number;
+	int sum = 0, count = 0;
+
+	do 
+	{
+		std::cout << "Enter the number " << count + 1 << ": " << std::endl;
+		std::cin >> number;
+		sum += number;
+		count++;
+	} while (count < 7);
+
+	std::cout << "Sum = " << sum << std::endl;
+	return 0;
+}
+
+int task_27()
+{
+	int user_choice;
+	double length_cm, result;
+
+	std::cout << "Enter the length in centimeters " << std::endl;
+	std::cin >> length_cm;
+
+	std::cout << "Select the unit of measurement: 1 - millimeters, 2 - decimeters, 3 - meters " << std::endl;
+	std::cin >> user_choice;
+
+	switch (user_choice)
+	{
+	case 1: 
+		result = length_cm * 10;
+		std::cout << "Length in millimeters = " << result << std::endl;
+		break;
+	case 2:
+		result = length_cm / 10;
+		std::cout << "Length in decimeters = " << result << std::endl;
+		break;
+	case 3:
+		result = length_cm / 100;
+		std::cout << "Length in meters = " << result << std::endl;
+		break;
+	default: 
+		std::cout << "An error occurred" << std::endl;
+	}
+	return 0;
+}
+
+int task_28()
+{
+	char operation;
+	double number_1, number_2, result;
+
+	std::cout << "Calculator Console Application" << std::endl;
+
+	std::cout << "Enter the first number: " << std::endl;
+	std::cin >> number_1;
+
+	std::cout << "Enter the second number: " << std::endl;
+	std::cin >> number_2;
+
+	std::cout << "Please enter the operation to perform: (+, -, *, /) :" << std::endl;
+	std::cin >> operation;
+
+	switch (operation)
+	{
+	case '+':
+		result = number_1 + number_2;
+		std::cout << number_1 << " + " << number_2 << " = " << result;
+		break;
+	case '-':
+		result = number_1 - number_2;
+		std::cout << number_1 << " - " << number_2 << " = " << result;
+		break;
+	case '*':
+		result = number_1 * number_2;
+		std::cout << number_1 << " * " << number_2 << " = " << result;
+		break;
+	case '/':
+		if (number_2 == 0)
+		{
+			std::cout << "Error: division by zero" << std::endl;
+		}
+		else
+		{
+			result = number_1 / number_2;
+			std::cout << number_1 << " / " << number_2 << " = " << result;
+		}
+		break;
+	default:
+		std::cout << "Error: unknown operation" << std::endl;
+	}
+	return 0;
+}
