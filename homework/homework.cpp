@@ -543,3 +543,356 @@ int task_28()
 	}
 	return 0;
 }
+
+int task_29()
+{
+	int array[10];
+	int product = 1;
+
+	std::cout << "Please input 10 numbers:" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cin >> array[i];
+	}
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
+
+	for (int i = 0; i < 10; i++)
+	{
+		product *= array[i];
+	}
+	std::cout << "Product = " << product << std::endl;
+
+	return 0;
+}
+
+int task_30()
+{
+	int array[7];
+	int negative_count = 0, positive_count = 0;
+
+	for (int i = 0; i < 7; i++)
+	{
+		array[i] = rand() % (50 - (-12) +1) + (-12);
+	}
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 7; i++)
+	{
+		std::cout << array[i] << " ";
+		if (array[i] < 0)
+			negative_count++;
+		else
+			positive_count++;
+	}
+	std::cout << std::endl;
+
+	std::cout << "Number of negative elements = " << negative_count << std::endl;
+	std::cout << "Number of positive elements = " << positive_count << std::endl;
+
+	return 0;
+}
+
+int task_31()
+{
+	long array[7] = { 34, -56, 4, 7, 78, -12, -8 };
+	long sum = 0;
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 7; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
+
+	for (int i = 0; i < 7; i++)
+	{
+		if (array[i] % 2 == 0)
+		{
+			sum += array[i];
+		}
+	}
+	std::cout << "Sum = " << sum << std::endl;
+
+	return 0;
+}
+
+int task_32()
+{
+	int array[30];
+	int add_var = 1;
+
+	for (int i = 0; i < 30; i++)
+	{
+		array[i] = add_var;
+		add_var *= 2;
+	}
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 30; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
+
+	std::cout << "Array in reverse order: ";
+	for (int i = 30 - 1; i >= 0; i--)
+	{
+		std::cout << array[i] << " ";
+	}
+
+	return 0;
+}
+
+
+int task_33()
+{
+	int array[10] = {-6, 7, 15, -19, -2, 45, 34, 9, -23, -51};
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (array[i] < 0)
+		{
+			array[i] = -array[i];
+		}
+	}
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+
+	return 0;
+}
+
+int task_34()
+{
+	int array[10] = { 4, 8, -5, 9, -3, -8, 2, -1, 5, 7};
+	int max = 0, min = 0, add_var;
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (array[i] > array[max])
+		{
+			max = i;
+		}
+		if (array[i] < array[min])
+		{
+			min = i;
+		}
+	}
+
+	add_var = array[max];
+	array[max] = array[min];
+	array[min] = add_var;
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+
+	return 0;
+}
+
+int task_35()
+{
+	const int array_size = 10;
+	int array[array_size] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	int sum = 0;
+	for (int i = 1; i < 10; i += 2)
+	{
+		sum += array[i];
+	}
+
+	std::cout << "Sum of elements with odd indices = " << sum << std::endl;
+
+	return 0;
+}
+
+int task_36()
+{
+	int array[10] = { 13, -9, -5, 17, -45, 16, 8, -8, 5, 52 };
+	int first_element = 0;
+	int last_element = 0;
+
+	for (int i = 0; i < 10; i++) 
+	{
+		if (array[i] < 0) 
+		{
+			if (first_element < 0)
+			{
+				first_element = i;
+			}
+			last_element = i - 1;
+		}
+	}
+
+	int count = 0;
+	if (first_element != -1 && last_element != -1 && last_element > first_element) 
+	{
+		count = last_element - first_element - 1;
+	}
+
+	std::cout << "Result = " << count << std::endl;
+
+	return 0;
+}
+
+int task_37()
+{
+	const int array_size = 10;
+	int array[array_size];
+
+	std::cout << "Enter the elements of the array";
+	for (int i = 0; i < array_size; i++)
+	{
+		std::cin >> array[i];
+	}
+
+	for (int i = 0; i < array_size -1; i+=2)
+	{
+		int add_var = array[i];
+		array[i] = array[i + 1];
+		array[i + 1] = add_var;
+	}
+
+	std::cout << "Array after changes: ";
+	for (int i = 0; i < array_size; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+
+	return 0;
+}
+
+int task_38()
+{
+	int A[5];
+
+	std::cout << "Enter the elements of the array";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cin >> A[i];
+	}
+
+	int B[5];
+	for (int i = 0; i < 5; i++)
+	{
+		B[i] = A[i];
+	}
+
+	std::cout << "Array B: ";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << B[i] << " ";
+	}
+
+	return 0;
+}
+
+int task_39()
+{
+	int A[5];
+
+	std::cout << "Enter the elements of the array A";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cin >> A[i];
+	}
+
+	int B[5];
+
+	for (int i = 0; i < 5; i++)
+	{
+		B[i] = A[4 - i];
+	}
+
+	std::cout << "Array A: ";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << A[i];
+
+	}
+	std::cout << std::endl;
+
+	std::cout << "Array B: ";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << B[i];
+	}
+	std::cout << std::endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << A[i] << " " << B[i] << " " << i << std::endl;
+	}
+
+	return 0;
+}
+
+int task_40()
+{
+	int hours = 2, minutes = 20, seconds = 40;
+
+	int* hours_ptr = &hours;
+	int* minutes_ptr = &minutes;
+	int* seconds_ptr = &seconds;
+
+	int h = *hours_ptr;
+	int m = *minutes_ptr;
+	int s = *seconds_ptr;
+
+	int result;
+	result = h * 3600 + m * 60 + s;
+
+	std::cout << "Result = " << result << std::endl;
+
+	return 0;
+}
+
+int task_41()
+{
+	int* int_value = nullptr;
+	int_value = new int(5);
+
+	double* double_value = nullptr;
+	double_value = new double(5.5);
+
+	std::cout << "Enter the elements of the array:";
+	int* int_array = new int[5];
+	for (int i = 0; i < 5; i++)
+	{
+		std::cin >> int_array[i];
+	}
+
+	std::cout << "Array elements: ";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << int_array[i] << " ";
+	}
+	std::cout << std::endl;
+
+	delete[] int_array;
+
+	std::cout << "Int Value: " << *int_value << std::endl;
+	std::cout << "Double Value: " << *double_value << std::endl;
+
+	double product = *int_value * *double_value;
+	double average = (*int_value + *double_value) / 2;
+
+	std::cout << "Product = " << product << std::endl;
+	std::cout << "Average = " << average << std::endl;
+
+	delete int_value;
+	delete double_value;
+
+	return 0;
+}
