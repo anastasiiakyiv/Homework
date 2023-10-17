@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 int main()
 {
@@ -893,6 +894,256 @@ int task_41()
 
 	delete int_value;
 	delete double_value;
+
+	return 0;
+}
+
+int task_42()
+{
+	int A[5] = { 1, 2, 3, 4, 5 };
+	int B[5] = { 6, 7, 8, 9, 10 };
+
+	int new_size = 10;
+	int* new_array = new int[new_size];
+
+	for (int i = 0; i < 5; i++)
+	{
+		new_array[i] = A[i];
+	}
+
+	int* ptr_new_array = new_array + 5;
+
+	for (int i = 0; i < 5; i++) {
+		if (B[i] % 3 == 0 || B[i] % 7 == 0) 
+		{
+			*ptr_new_array = B[i];
+			ptr_new_array++;
+		}
+	}
+
+	std::cout << "New array: ";
+	for (int i = 0; i < new_size; i++)
+	{
+		std::cout << new_array[i] << " ";
+	}
+
+	delete[] new_array;
+
+	return 0;
+}
+
+int task_43()
+{
+	int A[5];
+
+	std::cout << "Enter the elements of the array: ";
+	for (int i = 0; i < 5; i++)
+	{
+		std::cin >> A[i];
+	}
+
+	int first_element = A[0];
+	int new_size = 0;
+
+	for (int i = 0; i < 5; i++)
+	{
+		if ((first_element % 2 == 0 && A[i] % 2 != 0) || (first_element % 2 != 0 && A[i] % 2 == 0))
+		{
+			new_size++;
+		}
+	}
+
+	int* new_array = new int[new_size];
+	int new_index = 0;
+
+	for (int i = 0; i < 5; i++)
+	{
+		if ((first_element % 2 == 0 && A[i] % 2 != 0) || (first_element % 2 != 0 && A[i] % 2 == 0))
+		{
+			new_array[new_index] = A[i];
+			new_index++;
+		}
+	}
+
+	std::cout << "New array: ";
+	for (int i = 0; i < new_size; i++)
+	{
+		std::cout << new_array[i] << " ";
+	}
+
+	delete[] new_array;
+
+	return 0;
+}
+
+int task_44()
+{
+	int array[10];
+
+	std::cout << "Enter the elements of the array: ";
+	for (int i = 0; i < 10; i++)
+	{
+		std::cin >> array[i];
+	}
+
+	int new_size = 0;
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (array[i] % 2 == 0)
+		{
+			new_size++;
+		}
+	}
+
+	int* new_array = new int[new_size];
+	int new_index = 0;
+
+	for (int i = 0; i < 10; i++) 
+	{
+		if (array[i] % 2 == 0) 
+		{
+			new_array[new_index] = array[i];
+			new_index++;
+		}
+	}
+
+	std::cout << "New array: ";
+	for (int i = 0; i < new_size; i++)
+	{
+		std::cout << new_array[i] << " ";
+	}
+
+	delete[] new_array;
+
+	return 0;
+}
+
+int task_45()
+{
+	int size = 10;
+	int* array = new int[size];
+
+	std::cout << "Enter the elements of the array: ";
+	for (int i = 0; i < size; i++)
+	{
+		std::cin >> array[i];
+	}
+
+	int new_size = size * 2;
+	int* new_array = new int[new_size];
+	int new_index = 0;
+
+	for (int i = 0; i < size; i++) 
+	{
+		int element = array[i];
+		int last_digit = element % 10;
+
+		new_array[new_index++] = last_digit;
+		new_array[new_index++] = element;
+	}
+
+	std::cout << "New array: ";
+	for (int i = 0; i < new_size; i++) 
+	{
+		std::cout << new_array[i] << " ";
+	}
+
+	delete[] array;
+	delete[] new_array;
+
+	return 0;
+}
+
+int task_46()
+{
+	char str[10];
+	std::cout << "Enter a string: ";
+	std::cin >> str;
+
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (str[i] == '+')
+			str[i] = '-';
+	}
+
+	std::cout << "String after changes: " << str;
+
+	return 0;
+}
+
+int task_47()
+{
+	const char* str = "Hello12345";
+
+	int digit_count = 0;
+
+	for (int i = 0; str[i] != '\0'; i++) 
+	{
+		if (isdigit(str[i])) 
+		{
+			digit_count++;
+		}
+	}
+
+	std::cout << "The number of digits in a string: " << digit_count << std::endl;
+
+	return 0;
+}
+
+int task_48()
+{
+	char str[100];
+	std::cout << "Enter a string: ";
+	std::cin.getline(str, 100);
+
+	for (int i = 0; str[i] != '\0'; i++)
+	{
+		char letter = str[i];
+		if (letter >= 'a' && letter < 'z')
+		{
+			str[i] = letter + 1;
+		}
+		else if (letter == 'z')
+		{
+			str[i] = 'a';
+		}
+		else if (letter >= 'A' && letter < 'Z')
+		{
+			str[i] = letter + 1;
+		}
+		else if (letter == 'Z')
+		{
+			str[i] = 'A';
+		}
+	}
+
+	std::cout << "String after changes: " << str << std::endl;
+
+	return 0;
+}
+
+int task_48()
+{
+	std::string input;
+	std::cout << "Enter a string: ";
+	std::getline(std::cin, input);
+
+	std::string result;
+	char current_char = input[0];
+
+	for (int i = 1; i < input.length(); i++)
+	{
+		if (input[i] != current_char)
+		{
+			result += current_char;
+			current_char = input[i];
+		}
+	}
+
+	result += current_char;
+
+	std::cout << "String after changes: " << result << std::endl;
 
 	return 0;
 }
