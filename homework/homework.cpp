@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include "mylib.h"
 
 int main()
 {
@@ -1123,7 +1124,7 @@ int task_48()
 	return 0;
 }
 
-int task_48()
+int task_49()
 {
 	std::string input;
 	std::cout << "Enter a string: ";
@@ -1144,6 +1145,81 @@ int task_48()
 	result += current_char;
 
 	std::cout << "String after changes: " << result << std::endl;
+
+	return 0;
+}
+
+int task_50()
+{
+	for (int month = 1; month <= 12; ++month) 
+	{
+		std::string name = month_name(month);
+		int days = days_in_month(month);
+
+		if (days != -1) 
+		{
+			std::cout << "There are " << days << " days in " << name << std::endl;
+		}
+		else 
+		{
+			std::cout << "Incorrect month number" << std::endl;
+		}
+	}
+
+	return 0;
+}
+
+int task_51()
+{
+	int numbers[] = { 3, 5, 7, 9 };
+	int count = sizeof(numbers) / sizeof(numbers[0]);
+
+	int total_sum = Sum(numbers, count);
+	std::cout << "Sum = " << total_sum << std::endl;
+
+	return 0;
+}
+
+int task_52()
+{
+	int numbers[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int count = sizeof(numbers) / sizeof(numbers[0]);
+
+	int result = SumParni(numbers, count);
+	std::cout << "Sum of even numbers = " << result << std::endl;
+
+	return 0;
+}
+
+int task_53()
+{
+	int numbers[] = { 13, 5, 15, 7, 4, 0, 55 };
+	int count = sizeof(numbers) / sizeof(numbers[0]);
+
+	int digits = Count(numbers, count);
+	std::cout << "Result = " << digits << std::endl;
+
+	return 0;
+}
+
+int task_54()
+{
+	float numbers[] = { 1.2, 3.4, 5.6, 7.8 };
+	int count = sizeof(numbers) / sizeof(numbers[0]);
+
+	float average = Avg(numbers, count);
+	std::cout << "Result = " << average << std::endl;
+
+	return 0;
+}
+
+int task_55()
+{
+	float numbers[] = { 5.1, 0.0, 12.8, 0.6, 0.8, 7.3 };
+	int count = sizeof(numbers) / sizeof(numbers[0]);
+
+	int count_digits = Count(numbers, count);
+	std::cout << "Result = " << count_digits << std::endl;
 
 	return 0;
 }
