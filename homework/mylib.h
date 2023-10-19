@@ -190,3 +190,117 @@ double Average(int array[], int length)
     }
     return sum / (double)length;
 }
+
+struct Drib
+{
+    int numerator;
+    int denominator;
+
+    Drib(int num, int denom) 
+    {
+        numerator = num;
+        denominator = denom;
+    }
+
+    Drib operator+(const Drib& other) const 
+    {
+        int new_numerator = (numerator * other.denominator) + (other.numerator * denominator);
+        int new_denominator = denominator * other.denominator;
+        return Drib(new_numerator, new_denominator);
+    }
+
+    Drib operator-(const Drib& other) const 
+    {
+        int new_numerator = (numerator * other.denominator) - (other.numerator * denominator);
+        int new_denominator = denominator * other.denominator;
+        return Drib(new_numerator, new_denominator);
+    }
+};
+
+struct Complex 
+{
+    double real;
+    double imaginary;
+
+    Complex(double r, double i) 
+    {
+        real = r;
+        imaginary = i;
+    }
+
+    Complex operator+(const Complex& other) const 
+    {
+        double new_real = real + other.real;
+        double new_imaginary = imaginary + other.imaginary;
+        return Complex(new_real, new_imaginary);
+    }
+
+    Complex operator-(const Complex& other) const 
+    {
+        double new_real = real - other.real;
+        double new_imaginary = imaginary - other.imaginary;
+        return Complex(new_real, new_imaginary);
+    }
+
+    void print() 
+    {
+        std::cout << real << " + " << imaginary << "i" << std::endl;
+    }
+};
+
+struct Vector 
+{
+    double x;
+    double y;
+
+    Vector(double x_, double y_)
+    {
+        x = x_;
+        y = y_;
+    }
+};
+
+bool are_perpendicular(const Vector& v1, const Vector& v2) 
+{
+    return v1.x * v2.x + v1.y * v2.y == 0;
+}
+
+bool are_collinear(const Vector& v1, const Vector& v2) 
+{
+    if (v1.x == 0 && v1.y == 0) 
+    {
+        return true;
+    }
+    if (v2.x == 0 && v2.y == 0) 
+    {
+        return true;
+    }
+    return (v1.x / v2.x == v1.y / v2.y);
+}
+
+struct Point 
+{
+    double x;
+    double y;
+    double z;
+
+    Point(double x_, double y_, double z_)
+    {
+        x = x_;
+        y = y_;
+        z = z_;
+    }
+};
+
+double distance_between_points(const Point& p1, const Point& p2) 
+{
+    double dx = p1.x - p2.x;
+    double dy = p1.y - p2.y;
+    double dz = p1.z - p2.z;
+    return dx * dx + dy * dy + dz * dz;
+}
+
+double distance_to_origin(const Point& p) 
+{
+    return p.x * p.x + p.y * p.y + p.z * p.z;
+}

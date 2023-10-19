@@ -1223,3 +1223,61 @@ int task_55()
 
 	return 0;
 }
+
+int task_56()
+{
+	Drib drib1(1, 2);
+	Drib drib2(1, 3);
+
+	Drib sum_drib = drib1 + drib2;
+	Drib diff_drib = drib1 - drib2;
+
+	std::cout << "Sum = " << sum_drib.numerator << "/" << sum_drib.denominator << std::endl;
+	std::cout << "Difference = " << diff_drib.numerator << "/" << diff_drib.denominator << std::endl;
+
+	return 0;
+}
+
+int task_57()
+{
+	Complex num1(3.0, 4.0);
+	Complex num2(1.0, 2.0);
+
+	Complex sum = num1 + num2;
+	Complex diff = num1 - num2;
+
+	std::cout << "Sum = ";
+	sum.print();
+	std::cout << "Difference = ";
+	diff.print();
+
+	return 0;
+}
+
+int task_58()
+{
+	Vector v1(3.0, 4.0);
+	Vector v2(1.0, 2.0);
+
+	bool isPerpendicular = are_perpendicular(v1, v2);
+	bool isCollinear = are_collinear(v1, v2);
+
+	std::cout << "Perpendicularity: " << (isPerpendicular ? "Yes" : "No") << std::endl;
+	std::cout << "Collinearity: " << (isCollinear ? "Yes" : "No") << std::endl;
+
+	return 0;
+}
+
+int task_59()
+{
+	Point p1(3.0, 4.0, 5.0);
+	Point p2(1.0, 2.0, 3.0);
+
+	double squared_dist_between = distance_between_points(p1, p2);
+	double squared_dist_to_origin = distance_to_origin(p1);
+
+	std::cout << "The square of the distance between the points: " << squared_dist_between << std::endl;
+	std::cout << "The square of the distance from the point to the origin: " << squared_dist_to_origin << std::endl;
+
+	return 0;
+}
